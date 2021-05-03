@@ -1,0 +1,14 @@
+{% load i18n %}
+{% load bootstrap4 %}
+{% load account socialaccount %}
+
+{% get_providers as socialaccount_providers %}
+{% if socialaccount_providers  %}
+  <div class="socialaccount_ballot">
+    <ul class="socialaccount_providers list-unstyled">
+      {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+    </ul>
+  </div>
+
+  {% include "socialaccount/snippets/login_extra.html" %}
+{% endif %}
