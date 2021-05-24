@@ -17,13 +17,6 @@ from allauth.account.signals import user_signed_up
 
 
 class MyUserManager(UserManager):
-    """
-    Custom User Model manager.
-
-    It overrides default User Model manager's create_user() and create_superuser,
-    which requires username field.
-    """
-
     def create_user(self, email, password=None, **kwargs):
         user = self.model(email=email, **kwargs)
         user.set_password(password)
@@ -38,19 +31,6 @@ class MyUserManager(UserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    """User instances represent a user on this site.
-
-    Important: You don't have to use a custom user model. I did it here because
-    I didn't want a username to be part of the system and I wanted other data
-    to be part of the user and not in a separate table. 
-
-    You can avoid the username issue without writing a custom model but it
-    becomes increasingly obtuse as time goes on. Write a custom user model, then
-    add a custom admin form and model.
-
-    Remember to change ``AUTH_USER_MODEL`` in ``settings.py``.
-    """
-
     email = models.EmailField(_('email address'), blank=False, unique=True)
     first_name = models.CharField(_('first name'), max_length=40, blank=True, null=True, unique=False)
     last_name = models.CharField(_('last name'), max_length=40, blank=True, null=True, unique=False)

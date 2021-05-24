@@ -1,0 +1,25 @@
+{% extends "bases/bootstrap-member.html" %}
+
+{% block head_title %}Insurance{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="col-sm-6 col-md-4 col-lg-4">
+        <a href="../.."><input type="button" class="btn btn-danger" value="Back"/></a>
+        <table class="table table-sm table-hover">
+            <!-- Users can view only their insurance policies -->
+            {% if insurance.customer_id == user.id %}
+                {% for field_name, field_value in insurance.get_fields %}
+                    {% if field_value %}
+                        <tr>
+                            <td>{{field_name}}</td>
+                            <td align="right">{{field_value}}</td>
+                        </tr>    
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </table>
+        <a href="../.."><input type="button" class="btn btn-danger" value="Back"/></a>
+    </div>
+</div>
+{% endblock %}

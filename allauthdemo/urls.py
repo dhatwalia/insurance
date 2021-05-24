@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 from .auth.views import account_profile
-from .views import member_index, member_action
+from .views import *
 
 urlpatterns = [
     # Landing page area
@@ -35,7 +35,13 @@ urlpatterns = [
     # Account profile and member info
     url(r'^accounts/profile/$', account_profile, name='account_profile'),
     url(r'^member/$', member_index, name='user_home'),
-    url(r'^member/action$', member_action, name='user_action'),
+    url(r'^insurance/$', insurance, name='insurance'),
+    
+    url(r'^insurance/automotive/(?P<pk>\d+)/$', automotive, name='automotive'),
+    url(r'^insurance/disability/(?P<pk>\d+)/$', disability, name='disability'),
+    url(r'^insurance/health/(?P<pk>\d+)/$', health, name='health'),
+    url(r'^insurance/house/(?P<pk>\d+)/$', house, name='house'),
+    url(r'^insurance/life/(?P<pk>\d+)/$', life, name='life'),
 
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

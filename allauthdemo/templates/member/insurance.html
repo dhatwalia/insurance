@@ -1,0 +1,39 @@
+{% extends "bases/bootstrap-member.html" %}
+
+{% block head_title %}Insurance{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>My Insurance Policies</h2>
+    <h3>Auto Insurance</h3>
+    {% for policy in automotive %}
+        {% if policy.customer_id == user.id %}
+            <a href="automotive/{{policy.id}}">{{policy.id}}</a><br>
+        {% endif %}
+    {% endfor %}
+    <h3>Disability Insurance</h3>
+    {% for policy in disability %}
+        {% if policy.customer_id == user.id %}
+            <a href="disability/{{policy.id}}">{{policy.id}}</a><br>
+        {% endif %}
+    {% endfor %}
+    <h3>Health Insurance</h3>
+    {% for policy in health %}
+        {% if policy.customer_id == user.id %}
+            <a href="health/{{policy.id}}">{{policy.id}}</a><br>
+        {% endif %}
+    {% endfor %}
+    <h3>House Insurance</h3>
+    {% for policy in house %}
+        {% if policy.customer_id == user.id %}
+            <a href="house/{{policy.id}}">{{policy.id}}</a><br>
+        {% endif %}
+    {% endfor %}
+    <h3>Life Insurance</h3>
+    {% for policy in life %}
+        {% if policy.customer_id == user.id %}
+            <a href="life/{{policy.id}}">{{policy.id}}</a><br>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}
