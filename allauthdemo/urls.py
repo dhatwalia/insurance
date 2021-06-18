@@ -43,5 +43,11 @@ urlpatterns = [
     url(r'^insurance/house/(?P<pk>\d+)/$', house, name='house'),
     url(r'^insurance/life/(?P<pk>\d+)/$', life, name='life'),
 
+    url(r'^insurance/new-automotive/(?P<pk>\d+)/$', get_automotive, name='get-automotive'),
+    url(r'^insurance/new-disability/(?P<pk>\d+)/$', get_disability, name='get-disability'),
+    url(r'^insurance/new-health/(?P<pk>\d+)/$', get_health, name='get-health'),
+    url(r'^insurance/new-house/(?P<pk>\d+)/$', get_house, name='get-house'),
+    url(r'^insurance/new-life/(?P<pk>\d+)/$', get_life, name='get-life'),
+
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

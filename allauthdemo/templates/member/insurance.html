@@ -11,29 +11,34 @@
             <a href="automotive/{{policy.id}}">{{policy.id}}</a><br>
         {% endif %}
     {% endfor %}
+    <a href="new-automotive/{{user.id}}/"><input type="button" class="btn btn-primary" value="Get Auto Insurance"/></a>
     <h3>Disability Insurance</h3>
     {% for policy in disability %}
         {% if policy.customer_id == user.id %}
             <a href="disability/{{policy.id}}">{{policy.id}}</a><br>
         {% endif %}
     {% endfor %}
+    <a href="new-disability/{{user.id}}/"><input type="button" class="btn btn-primary" value="Get Disability Insurance"/></a>
     <h3>Health Insurance</h3>
     {% for policy in health %}
         {% if policy.customer_id == user.id %}
             <a href="health/{{policy.id}}">{{policy.id}}</a><br>
         {% endif %}
     {% endfor %}
+    <a href="new-health/{{user.id}}/"><input type="button" class="btn btn-primary" value="Get Health Insurance"/></a>
     <h3>House Insurance</h3>
     {% for policy in house %}
         {% if policy.customer_id == user.id %}
             <a href="house/{{policy.id}}">{{policy.id}}</a><br>
         {% endif %}
     {% endfor %}
+    <a href="new-house/{{user.id}}/"><input type="button" class="btn btn-primary" value="Get House Insurance"/></a>
     <h3>Life Insurance</h3>
     {% for policy in life %}
         {% if policy.customer_id == user.id %}
             <a href="life/{{policy.id}}">{{policy.id}}</a><br>
         {% endif %}
     {% endfor %}
+    <a href="new-life/{{user.id}}/"><input type="button" class="btn btn-primary" value="Get Life Insurance"/></a>
 </div>
 {% endblock %}
