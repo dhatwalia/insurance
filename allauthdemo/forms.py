@@ -22,6 +22,7 @@ class HouseForm(forms.ModelForm):
         exclude = ('customer_id', 'start', 'end', 'monthly_premium')
 
 class LifeForm(forms.Form):
+    coverage = forms.FloatField()
     permanent = forms.BooleanField(label='Do you want a permanent life insurance?', required=False)
     permanent_change = forms.BooleanField(label='Do you want to change the death benefit amount or suspend the premium?', required=False)
     only_year = forms.BooleanField(label='Is it only for a year OR urgently needed?', required=False)

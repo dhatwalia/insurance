@@ -135,7 +135,8 @@ def get_life(request, pk):
                         else:
                             life.fixed_traditional = True
 
-            life.customer_id = pk            
+            life.customer_id = pk   
+            life.coverage = coverage         
             life.save()
             return HttpResponse('Response submitted')
     else:

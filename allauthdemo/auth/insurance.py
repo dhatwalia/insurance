@@ -114,6 +114,9 @@ class Life(models.Model):
     id = models.AutoField(primary_key=True)
     customer_id = models.IntegerField(default=0)
 
+    # Coverage
+    coverage = models.FloatField(default=10000)
+
     # Types
     whole = models.BooleanField(default=False)
     universal = models.BooleanField(default=False)
