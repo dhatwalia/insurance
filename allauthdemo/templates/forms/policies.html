@@ -1,0 +1,22 @@
+{% extends "bases/bootstrap-member.html" %}
+
+{% block head_title %}Insurance{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form action="../../" method="post">
+        {% csrf_token %}
+        <div>
+            {% for policy in policies %}
+                <div>
+                    <input type="radio" id="huey" name="policy" value="{{policy.company}}" checked>
+                    <label for="{{policy.company}}">${{policy.premium}} - {{policy.company}}</label>
+                </div>
+            {% endfor %}
+            <div>
+                <input type="submit" class="btn btn-success" value="Submit" />
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -44,6 +44,7 @@ urlpatterns = [
     url(r'^insurance/life/(?P<pk>\d+)/$', life, name='life'),
 
     url(r'^insurance/new-automotive/(?P<pk>\d+)/$', get_automotive, name='get-automotive'),
+    url(r'^insurance/new-automotive/(?P<pk>\d+)/policies/$', get_automotive_rates, name='automotive-rates'),
     url(r'^insurance/new-disability/(?P<pk>\d+)/$', get_disability, name='get-disability'),
     url(r'^insurance/new-health/(?P<pk>\d+)/$', get_health, name='get-health'),
     url(r'^insurance/new-house/(?P<pk>\d+)/$', get_house, name='get-house'),

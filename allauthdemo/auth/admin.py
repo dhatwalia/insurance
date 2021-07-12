@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.utils.translation import ugettext_lazy as _
 from .insurance import Automotive, Disability, Health, House, Life
+from .rates import *
 
 try:
     from django.utils.encoding import force_text
