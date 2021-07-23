@@ -20,7 +20,12 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 from .auth.views import account_profile
-from .views import *
+from .views.index import *
+from .views.automotive import *
+from .views.disability import *
+from .views.health import *
+from .views.house import *
+from .views.life import *
 
 urlpatterns = [
     # Landing page area

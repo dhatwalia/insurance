@@ -76,6 +76,7 @@ class Health(models.Model):
     region = models.TextField(max_length=10, default='southeast')
 
     # Contract
+    company = models.CharField(max_length=25, default='Anthem')
     start = models.DateField(default=datetime.date.today)
     end = models.DateField(default=datetime.date.today)
     monthly_premium = models.FloatField(default=150)
@@ -119,6 +120,13 @@ class Life(models.Model):
 
     # Coverage
     coverage = models.FloatField(default=10000)
+
+    # Needs
+    permanent_need = models.BooleanField(default=False)
+    permanent_need_but_can_be_changed = models.BooleanField(default=False)
+    only_for_a_year = models.BooleanField(default=False)
+    less_than_10 = models.BooleanField(default=False)
+    small_budget = models.BooleanField(default=False)
 
     # Types
     whole = models.BooleanField(default=False)

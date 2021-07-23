@@ -29,7 +29,6 @@ class DisabilityRates(models.Model):
         verbose_name = ('rates_disability')
 
 class HealthRates(models.Model):
-    coverage = models.FloatField(default=200000)
     company = models.CharField(max_length=25, default='AllState')
     period = models.IntegerField(default=12)
     premium = models.FloatField(default=1000)
