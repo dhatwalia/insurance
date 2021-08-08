@@ -55,5 +55,7 @@ urlpatterns = [
     url(r'^insurance/new-house/(?P<pk>\d+)/$', get_house, name='get-house'),
     url(r'^insurance/new-life/(?P<pk>\d+)/$', get_life, name='get-life'),
 
+    url(r'^insurance/delete-(?P<type>[a-z]+)/(?P<id>[0-9]+)/$', delete, name='delete'),
+
     url(r'^admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -11,7 +11,7 @@ from pandas import *
 @login_required
 def automotive(request, pk):
     automotive = Automotive.objects.get(pk = pk)
-    return render(request, 'member/detail.html', {'insurance': automotive})
+    return render(request, 'member/detail.html', {'insurance': automotive, 'type': 'automotive'})
 
 @login_required
 def get_automotive_rates(request, instance):

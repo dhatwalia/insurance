@@ -2,14 +2,9 @@ from allauthdemo.auth.insurance import *
 from allauthdemo.auth.forms import *
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader, RequestContext
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from keras.models import Sequential
-from keras.layers import Dense
-from pandas import *
-from sklearn.model_selection import train_test_split
-import numpy as np
 
 @login_required
 def member_index(request):
@@ -33,3 +28,18 @@ def insurance(request):
         'life': life,
     })
 
+@login_required
+def delete(request, type, id):
+    if type == 'automotive':
+        item = Automotive.objects.get(id = id)
+    elif type == 'disability':
+        item = Disability.objects.get(id = id)
+    elif type == 'health':
+        item = Health.objects.get(id = id)
+    elif type == 'house':
+        item = House.objects.get(id = id)
+    else:
+        item = Life.objects.get(id = id)
+
+    item.delete()
+    return redirect('insurance')

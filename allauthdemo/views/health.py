@@ -16,7 +16,7 @@ import numpy as np
 @login_required
 def health(request, pk):
     health = Health.objects.get(pk = pk)
-    return render(request, 'member/detail.html', {'insurance': health})
+    return render(request, 'member/detail.html', {'insurance': health, 'type': 'health'})
 
 @login_required
 def get_health_rates(request, instance):

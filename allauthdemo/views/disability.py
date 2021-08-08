@@ -11,7 +11,7 @@ from pandas import *
 @login_required
 def disability(request, pk):
     disability = Disability.objects.get(pk = pk)
-    return render(request, 'member/detail.html', {'insurance': disability})
+    return render(request, 'member/detail.html', {'insurance': disability, 'type': 'disability'})
 
 @login_required
 def get_disability_rates(request, instance):

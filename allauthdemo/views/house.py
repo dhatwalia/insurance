@@ -11,7 +11,7 @@ from pandas import *
 @login_required
 def house(request, pk):
     house = House.objects.get(pk = pk)
-    return render(request, 'member/detail.html', {'insurance': house})
+    return render(request, 'member/detail.html', {'insurance': house, 'type': 'house'})
 
 @login_required
 def get_house_rates(request, instance):

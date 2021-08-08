@@ -11,7 +11,7 @@ from pandas import *
 @login_required
 def life(request, pk):
     life = Life.objects.get(pk = pk)
-    return render(request, 'member/detail.html', {'insurance': life})
+    return render(request, 'member/detail.html', {'insurance': life, 'type': 'life'})
 
 @login_required
 def get_life_rates(request, instance):
