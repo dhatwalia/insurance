@@ -12,7 +12,9 @@ Lakehead University COMP-9800 Project Winter - Spring/Summer 2021
 Note the Client ID and Client secret.
 
 ### On your device
-1. Run the following commands
+1. Install MySQL and create a database named “insurance”
+
+2. Run the following commands
     ``` 
     $ pip install -r required.txt
 
@@ -27,11 +29,11 @@ Note the Client ID and Client secret.
     $ python manage.py runserver
     ```
 
-2.  Go to http://127.0.0.1:8000/admin and login with the superuser credentials.
+3.  Go to http://127.0.0.1:8000/admin and login with the superuser credentials.
 
-3.  Update the domain and display name from example to "127.0.0.1:8000".
+4.  Update the domain and display name from example to "127.0.0.1:8000".
 
-4. Go to Social Accounts/ Social applications and create a new record. For Provider select "Google", copy and paste the Google Client id and Secret key from GCP and choose example for sites.  
+5. Go to Social Accounts/ Social applications and create a new record. For Provider select "Google", copy and paste the Google Client id and Secret key from GCP and choose example for sites.  
 
 ## Steps to run
 1. Run the following command
