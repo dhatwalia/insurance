@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from keras.models import Sequential
 from keras.layers import Dense
 from pandas import *
-from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.ensemble import GradientBoostingRegressor, VotingRegressor
 from sklearn.model_selection import train_test_split
 import numpy as np
 
@@ -32,7 +32,9 @@ def get_health_rates(request, instance):
         y = data['charges']
         train_x, test_x, train_y, test_y = train_test_split(x, y, test_size=0.4)
 
-        model = GradientBoostingRegressor(loss='huber', learning_rate=0.13, max_features='auto', alpha=0.7, random_state=1)
+        r1 = GradientBoostingRegressor(loss='huber', learning_rate=0.13, max_features='auto', alpha=0.7, random_state=1)
+        r2 = GradientBoostingRegressor(loss='huber', learning_rate=0.13, max_features='auto', alpha=0.7, random_state=1)
+        model = VotingRegressor([('gbr1', r1), ('gbr2', r2)])
         model.fit(train_x, train_y)
 
         test_x = np.asarray([[instance.age, instance.bmi, instance.children, instance.sex=='male', instance.smoker=='yes', instance.region=='northwest', instance.region=='southeast', instance.region=='southwest']])
