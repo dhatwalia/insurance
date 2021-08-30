@@ -32,7 +32,7 @@ class Automotive(models.Model):
     company = models.CharField(max_length=25, default='The Co-operators')
     start = models.DateField(default=datetime.date.today)
     end = models.DateField(default=datetime.date.today)
-    monthly_premium = models.FloatField(default=150)
+    monthly_premium = models.FloatField(default=230)
 
     class Meta:
         verbose_name = ('automotive')
@@ -55,7 +55,7 @@ class Disability(models.Model):
     # Contract
     start = models.DateField(default=datetime.date.today)
     end = models.DateField(default=datetime.date.today)
-    monthly_premium = models.FloatField(default=100)
+    monthly_premium = models.FloatField(default=120)
 
     class Meta:
         verbose_name = ('disability')
@@ -79,7 +79,7 @@ class Health(models.Model):
     company = models.CharField(max_length=25, default='Anthem')
     start = models.DateField(default=datetime.date.today)
     end = models.DateField(default=datetime.date.today)
-    monthly_premium = models.FloatField(default=150)
+    monthly_premium = models.FloatField(default=236)
 
     class Meta:
         verbose_name = ('health')
@@ -95,13 +95,13 @@ class House(models.Model):
     dwelling = models.FloatField(default=10000)
     contents = models.FloatField(default=10000)
     personal_liability = models.FloatField(default=10000)
-    flood = models.FloatField(blank=True, null=True)
-    windstorm = models.FloatField(blank=True, null=True)
-    sewer_backup = models.FloatField(blank=True, null=True)
-    scheduled_articles = models.FloatField(blank=True, null=True)
-    equipment_breakdown = models.FloatField(blank=True, null=True)
-    guaranteed_replacement = models.FloatField(blank=True, null=True)
-    earthquake = models.FloatField(blank=True, null=True)
+    flood = models.FloatField(default=0)
+    windstorm = models.FloatField(default=0)
+    sewer_backup = models.FloatField(default=0)
+    scheduled_articles = models.FloatField(default=0)
+    equipment_breakdown = models.FloatField(default=0)
+    guaranteed_replacement = models.FloatField(default=0)
+    earthquake = models.FloatField(default=0)
 
     # Contract
     start = models.DateField(default=datetime.date.today)
@@ -140,7 +140,7 @@ class Life(models.Model):
     # Contract
     start = models.DateField(default=datetime.date.today)
     end = models.DateField(default=datetime.date.today)
-    next_premium = models.FloatField(default=1000)
+    next_premium = models.FloatField(default=125)
 
     class Meta:
         verbose_name = ('life')
